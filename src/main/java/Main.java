@@ -15,14 +15,12 @@ public class Main {
         while (flag) {
             System.out.println("Please pick your option");
             menuButton = scanner.nextInt();
-            {
-            }
             switch (menuButton) {
                 case 0:
                     Menu.printMenu();
                     break;
                 case 1:
-                    sr.sendRestReques();
+                    sr.sendRestReques(scanner);
                     break;
                 case 2:
 
@@ -30,8 +28,10 @@ public class Main {
 //                    SearchRequestOnWiki.readRequestsList();
                     break;
                 case 3:
+                    sr.sendRestReques2(scanner);
                     break;
                 case 4:
+                    sr.readRequestsList();
                     break;
                 case 5:
                     flag = false;
