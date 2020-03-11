@@ -28,7 +28,7 @@ public class Main {
 //                    SearchRequestOnWiki.readRequestsList();
                     break;
                 case 3:
-                    sr.sendRestReques2(scanner);
+                    sr.readAnswers();
                     break;
                 case 4:
                     sr.readRequestsList();

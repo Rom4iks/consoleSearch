@@ -13,15 +13,16 @@ import java.util.Scanner;
 public class SearchRequestOnWiki {
 
     private List<String> requests = new ArrayList<>();
-
+    private List<String> answer = new ArrayList<>();
 
     public void readRequestsList() {
         System.out.println("Your request History : ");
         requests.forEach(System.out::println);
     }
 
-    private void addNewRequestToTheList(String request) {
-        requests.add(request);
+    public void readAnswers () {
+        System.out.println("Your responce History : ");
+        answer.forEach(System.out::println);
     }
 
     public void sendRestReques(Scanner scanner) {
@@ -43,13 +44,15 @@ public class SearchRequestOnWiki {
                         .get();
 
         //Retrieving Body of response
-        String body = response.getBody().asString();
+//        String body = response.getBody().asString();
+        String body = response.getBody().prettyPrint();
+        answer.add(body);
         //Retrieving Status Code of response
         int status = response.getStatusCode();
 
 
         String statusLine = response.getStatusLine();
-        System.out.println("Response Body is " + body);
+//        System.out.println("Response Body is " + body);
         System.out.println("Status code is " + status);
         System.out.println("Status line is " + statusLine);
     }
