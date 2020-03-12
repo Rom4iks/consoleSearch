@@ -17,13 +17,21 @@ public class SearchRequestOnWiki {
     private List<String> answer = new ArrayList<>();
 
     public void readRequestsList() {
-        System.out.println("Your request History : ");
-        requests.forEach(System.out::println);
+        if (requests.isEmpty()) {
+            System.out.println("Request History is empty");
+        } else {
+            System.out.println("Your request History : ");
+            requests.forEach(System.out::println);
+        }
     }
 
     public void readAnswers() {
-        System.out.println("Your responce History : ");
-        answer.forEach(System.out::println);
+        if (answer.isEmpty()) {
+            System.out.println("Request History is empty");
+        } else {
+            System.out.println("Your responce History : ");
+            answer.forEach(System.out::println);
+        }
     }
 
 
@@ -71,8 +79,7 @@ public class SearchRequestOnWiki {
                 }
             }
             System.out.println("Successfully wrote to the file.");
-        }
-        else
+        } else
             System.out.println("Do not regret after !");
         myWriter.close();
     }
